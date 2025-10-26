@@ -11,7 +11,7 @@ def root():
     return {
         "status": "OK",
         "app": "Travell App",
-        "message": "Welcome to Travell App! Twój backend działa poprawnie 🚀"
+        "message": "Witamy w Travell App! Twój backend działa poprawnie 🚀"
     }
 
 def search_google_places(country, category, location=None, radius=60000):
@@ -24,7 +24,7 @@ def search_google_places(country, category, location=None, radius=60000):
         f"https://maps.googleapis.com/maps/api/place/textsearch/json?"
         f"query={category}+in+{country}{loc_str}&key={API_KEY}"
     )
-    results = requests.get(url).json()["results"]
+    results = requests.get(url).json().get("results", [])
     return [
         {
             "name": r["name"],
