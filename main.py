@@ -12,9 +12,9 @@ WELCOME_MESSAGES = {
 }
 
 NO_RESULTS_MESSAGES = {
-    "pl": "Brak wyników dla podanych parametrów.",
-    "en": "No results for the specified parameters.",
-    "no": "Ingen resultater for de oppgitte parametrene."
+    "pl": "Brak wyników dla podanych parametrów. Spróbuj zmienić kategorię, miasto lub język wyszukiwania.",
+    "en": "No results for the specified parameters. Try changing the category, city, or search language.",
+    "no": "Ingen resultater for de oppgitte parametrene. Prøv å endre kategori, by eller språk."
 }
 
 @app.get("/")
@@ -36,31 +36,13 @@ def test(lang: str = Query(default="pl", enum=["pl", "en", "no"])):
 
 def translate_text(text, target_lang):
     translations = {
-        "temple": {
-            "pl": "świątynia",
-            "en": "temple",
-            "no": "tempel"
-        },
-        "viewpoint": {
-            "pl": "punkt widokowy",
-            "en": "viewpoint",
-            "no": "utsiktspunkt"
-        },
-        "museum": {
-            "pl": "muzeum",
-            "en": "museum",
-            "no": "museum"
-        },
-        "park": {
-            "pl": "park",
-            "en": "park",
-            "no": "park"
-        },
-        "stadium": {
-            "pl": "stadion",
-            "en": "stadium",
-            "no": "stadion"
-        }
+        "temple": {"pl": "świątynia", "en": "temple", "no": "tempel"},
+        "viewpoint": {"pl": "punkt widokowy", "en": "viewpoint", "no": "utsiktspunkt"},
+        "museum": {"pl": "muzeum", "en": "museum", "no": "museum"},
+        "park": {"pl": "park", "en": "park", "no": "park"},
+        "stadium": {"pl": "stadion", "en": "stadium", "no": "stadion"},
+        "gallery": {"pl": "galeria", "en": "gallery", "no": "galleri"},
+        "restaurant": {"pl": "restauracja", "en": "restaurant", "no": "restaurant"},
     }
     return translations.get(text.lower(), {}).get(target_lang, text)
 
