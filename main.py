@@ -2,7 +2,7 @@ import requests
 from fastapi import FastAPI
 import os
 
-API_KEY = os.getenv("AIzaSyBasrkaL6jidlX24iPdZaZ85Wv43uqM5ug")  # Pobiera klucz z Railway ENV Variable
+API_KEY = os.getenv("GOOGLE_API_KEY")  # Pobiera klucz z Railway ENV Variable
 
 app = FastAPI()
 
