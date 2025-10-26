@@ -3,7 +3,6 @@ from fastapi import FastAPI
 import os
 
 app = FastAPI()
-
 API_KEY = os.getenv("GOOGLE_API_KEY")  # Pobiera klucz z Railway Variables
 
 @app.get("/")
@@ -13,6 +12,10 @@ def root():
         "app": "Travell App",
         "message": "Witamy w Travell App! Twój backend działa poprawnie 🚀"
     }
+
+@app.get("/test")
+def test():
+    return {"msg": "To jest testowy endpoint TravellApp"}
 
 def search_google_places(country, category, location=None, radius=60000):
     if location:
