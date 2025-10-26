@@ -13,7 +13,6 @@ def root():
         "message": "Witamy w Travell App! Twój backend działa poprawnie 🚀"
     }
 
-# ...reszta Twoich endpointów...
 
 API_KEY = os.getenv("GOOGLE_API_KEY")  # Pobiera klucz z Railway ENV Variable
 
