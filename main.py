@@ -1,6 +1,19 @@
 import requests
 from fastapi import FastAPI
 import os
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def root():
+    return {
+        "status": "OK",
+        "app": "Travell App",
+        "message": "Witamy w Travell App! Twój backend działa poprawnie 🚀"
+    }
+
+# ...reszta Twoich endpointów...
 
 API_KEY = os.getenv("GOOGLE_API_KEY")  # Pobiera klucz z Railway ENV Variable
 
