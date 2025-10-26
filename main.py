@@ -11,7 +11,7 @@ def root():
     return {
         "status": "OK",
         "app": "Travell App",
-        "message": "Witamy w Travell App! Twój backend działa poprawnie 🚀"
+        "message": "Welcome to Travell App! Twój backend działa poprawnie 🚀"
     }
 
 def search_google_places(country, category, location=None, radius=60000):
